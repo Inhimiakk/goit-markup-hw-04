@@ -31,22 +31,10 @@
             </div>
     </header>
     <main>
-        <div data-modal class="data-modal is-hidden">
-            <div class="modal-window">
-                <button class="btn-modal" data-modal-close type="button">
-						<svg width="18px" height="18px">
-							<use href="./images/icons.svg#close"></use>
-						</svg>
-				</button>
-                <form class="modal-form">
-                    
-                </form>
-            </div>
-        </div>
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">Effective Solutions for Your Business</h1>
-                <button type="button" class=" button button-main">Order Service</button> 
+                <button type="button" data-modal-open class="button button-main">Order Service</button> 
             </div>
         </section>
         <section class="advantages">
@@ -313,6 +301,17 @@
            </ul>
         </div>
     </footer>
+    <div data-modal class="data-modal is-hidden">
+            <div class="modal-window">
+                <button class="btn-modal" data-modal-close type="button">
+						<svg width="18px" height="18px">
+							<use href="./images/icons.svg#close"></use>
+						</svg>
+				</button>
+                <form class="modal-form">
+                </form>
+            </div>
+        </div>
     <script src="./js/modal.js"></script>
 </body>
 </html>
