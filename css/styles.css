@@ -208,6 +208,7 @@ nav{
 
 
 .hero{
+    max-width: 1440px;
     padding: 188px 0;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7),
     rgba(46, 47, 66, 0.7)), url(../images/bcg.jpg);
@@ -254,12 +255,15 @@ nav{
 }
 
 .advantages-svg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     flex-shrink: 0;
     border-radius: 4px;
     background: var(--cloud);
     width: 264px;
-    height: 120px;
+    height: 112px;
     margin-bottom: 8px;
 }
 
@@ -402,8 +406,6 @@ nav{
 .social-list-footer{
     gap: 16px;
 }
-
-social-link
 
 .logo-footer{
     margin-bottom: 17px;
