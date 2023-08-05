@@ -12,6 +12,7 @@
     --ocean: #404BBF;
     --cloud: #F4F4FD;
     --cornflower: #E7E9FC;
+    --modal:#fcfcfc;
     --navyblue-modal: rgba(46, 47, 66, 0.40);
     --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -208,6 +209,7 @@ nav{
 
 
 .hero{
+    margin: 0 auto;
     max-width: 1440px;
     padding: 188px 0;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7),
@@ -258,7 +260,6 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     flex-shrink: 0;
     border-radius: 4px;
     background: var(--cloud);
@@ -267,14 +268,6 @@ nav{
     margin-bottom: 8px;
 }
 
-.icon-adv,
-.social-link,
-.icon-logo{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .list-doing:not(:last-child){
     margin-right: 24px;
@@ -332,25 +325,43 @@ nav{
     text-align: center;
 }
 
-.social-bc{
+.social-bc,
+.social-bc-footer{
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     fill: var(--cloud);
-    position: relative;
     background-color: var(--iris);
     width: 40px;
     height: 40px;
-    border-radius: 30px;
+    border-radius: 50%;
     transition: background-color 250ms var(--cubic);
 }
 
+.social-bc-footer{
+    padding: 8px;
+}
+
 .social-bc:hover,
-.social-bc:focus{
+.social-bc:focus,
+.social-bc-footer:hover,
+.social-bc-footer:focus{
     background-color: var(--ocean);
 }
 
 .social-list{
+    justify-content: center;
     margin-top: 8px;
     padding: 0 16px;
     gap: 24px;
+}
+
+.social-link{
+    width: 100%;
+    height: 100%;
 }
 
 /*customers*/
@@ -361,12 +372,16 @@ nav{
 }
 
 .customers-logo{
-    position: relative;
-    width: 168px;
-    height: 88px;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
     border: 1px solid var(--light-slate);
     transition: border 250ms var(--cubic);
+    color: var(--light-slate);
 }
 
 .customers-logo:hover,
@@ -380,9 +395,10 @@ nav{
 }
 
 .icon-logo{
-    fill: var(--light-slate);
+    fill: currentColor;
     transition: fill 250ms var(--cubic);
 }
+
 
 /*Footer*/
 
@@ -395,11 +411,21 @@ nav{
     margin-left: 120px;
 }
 
+.footer-content{
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-info{
+    margin-right: 120px;
+}
+
 .sosial-title{
+    font-weight: 500;
     color: var(--white);
     font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.32px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     margin-bottom: 16px;
 }
 
@@ -434,11 +460,13 @@ nav{
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
     background: var(--cloud);
     color: var(--iris);
+    transition: color 250ms var(--cubic), background-color 250ms var(--cubic), border-color 250ms var(--cubic), box-shadow 250ms var(--cubic);
 }
 
 .button-portfolio:hover,
 .button-portfolio:focus{
-    border: 1px solid transparent}
+    border: 1px solid transparent;
+}
 
 
 .button-portfolio-li:not(:last-child){
@@ -454,6 +482,17 @@ nav{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.portfolio-card-a{
+    display: block;
+    transition: box-shadow 250ms var(--cubic);
+}
+
+.portfolio-card-a:hover .position-card .overlay,
+.portfolio-card-a:focus .position-card .overlay{
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    transform: translateY(0%);
 }
 
 .portfolio-card:not(:nth-child(3n)){
@@ -479,25 +518,25 @@ nav{
    
 }
 
-.overlay {
+.overlay{
     position: absolute;
-    top: 0;
+    font-size: 16px;
+    top:0;
     left: 0;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--cloud);
+    padding: 40px 32px;
+    background-color: var(--iris);
     width: 100%;
     height: 100%;
     transform: translateY(100%);
-    padding: 40px 32px;
-    background: var(--iris);
-    color: #fff;
-    transition: transform 300ms var(--cubic);
+    transition: transform 250ms var(--cubic);
 }
 
-.portfolio-card:hover .overlay {
-    transform: translateY(0);
-}
 
 .data-modal {
-    backdrop-filter: brightness(0.8);
+    background-color: rgba(46, 47, 66, 0.4);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -507,4 +546,51 @@ nav{
     opacity: 100%;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+}
+
+.is-hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-window{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    min-height: 584px;
+    background-color: var(--modal);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform 250ms var(--cubic);
+}
+
+.btn-modal{
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px; 
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cornflower);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 250ms var(--cubic), border 250ms var(--cubic);
+}
+
+.btn-modal:hover,
+.btn-modal:focus{
+    border: none;
+    background-color: var(--ocean);
+    fill: var(--white);
+}
+
+.close{
+    transition: fill 250ms var(--cubic);
 }
