@@ -8,6 +8,7 @@
     --light-slate: rgba(142, 143, 153, 1);
     --slate: #434455;
     --white: #FFF;
+    --green-blue:#31d0aa;
     --iris: #4D5AE5;
     --ocean: #404BBF;
     --cloud: #F4F4FD;
@@ -335,10 +336,13 @@ nav{
     height: 100%;
     fill: var(--cloud);
     background-color: var(--iris);
-    width: 40px;
-    height: 40px;
     border-radius: 50%;
     transition: background-color 250ms var(--cubic);
+}
+
+.social-li{
+    width: 40px;
+    height: 40px;
 }
 
 .social-bc-footer{
@@ -346,9 +350,7 @@ nav{
 }
 
 .social-bc:hover,
-.social-bc:focus,
-.social-bc-footer:hover,
-.social-bc-footer:focus{
+.social-bc:focus{
     background-color: var(--ocean);
 }
 
@@ -369,6 +371,11 @@ nav{
 .customers-list{
     display: flex;
     gap: 24px;
+}
+
+.customers-li{
+    width: calc((100% - 120px) / 6);
+    height: 88px;
 }
 
 .customers-logo{
@@ -433,6 +440,11 @@ nav{
     gap: 16px;
 }
 
+.social-bc-footer:hover,
+.social-bc-footer:focus{
+    background-color: var(--green-blue);
+}
+
 .logo-footer{
     margin-bottom: 17px;
 }
@@ -491,8 +503,12 @@ nav{
 
 .portfolio-card-a:hover .position-card .overlay,
 .portfolio-card-a:focus .position-card .overlay{
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     transform: translateY(0%);
+}
+
+.portfolio-card-a:hover,
+.portfolio-card-a:focus{
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-card:not(:nth-child(3n)){
